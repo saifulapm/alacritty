@@ -78,13 +78,27 @@ window:
   # Set this to `None` to use the default theme variant.
   #gtk_theme_variant: None
 
-#scrolling:
-# Maximum number of lines in the scrollback buffer.
-# Specifying '0' will disable scrolling.
-#history: 10000
+scrolling:
+  # Maximum number of lines in the scrollback buffer.
+  # Specifying '0' will disable scrolling.
+  history: 10000
 
-# Scrolling distance multiplier.
-#multiplier: 3
+  # Scrolling distance multiplier.
+  multiplier: 3
+
+  # Faux Scrolling
+  #
+  # The `faux_multiplier` setting controls the number
+  # of lines the terminal should scroll when the alternate
+  # screen buffer is active. This is used to allow mouse
+  # scrolling for applications like `man`.
+  #
+  # To disable this completely, set `faux_multiplier` to 0.
+  faux_multiplier: 3
+
+  # Automatically scroll to the bottom when new text is written
+  # to the terminal.
+  auto_scroll: false
 
 # Font configuration
 font:
@@ -547,7 +561,7 @@ key_bindings:
   #- { key: Escape,                      mode: Vi, action: ClearSelection          }
   #- { key: I,                           mode: Vi, action: ScrollToBottom          }
   #- { key: I,                           mode: Vi, action: ToggleViMode            }
-  #- { key: Y,      mods: Control,       mode: Vi, action: ScrollLineUp            }
+  # - { key: Y, mods: Control, mode: Vi, action: ScrollLineUp }
   #- { key: E,      mods: Control,       mode: Vi, action: ScrollLineDown          }
   #- { key: G,                           mode: Vi, action: ScrollToTop             }
   #- { key: G,      mods: Shift,         mode: Vi, action: ScrollToBottom          }
